@@ -1,0 +1,9 @@
+syntax = "crawl3";
+
+pars field {
+    string name default "error";
+    int age default 10;
+}
+
+
+
