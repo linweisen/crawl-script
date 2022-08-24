@@ -1,9 +1,27 @@
-syntax = "crawl3";
+syntax = "crawl1";
 
-pars field {
+parse Format{
     string name default "error";
-    int age default 10;
+    int age default 0;
+
 }
 
 
+Header{
+    user-agent:Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.0.0 Safari/537.36;
+}
 
+URL liantong{
+    url=http://sfs?page=${param1}&count=${param2}
+    fixed int param1 = 1
+    flexible int param2 = file mysql() {
+        int init = 10;
+
+        return init;
+    }
+}
+
+
+Run {
+    post
+}
